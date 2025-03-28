@@ -15,7 +15,7 @@ EOM
 
 pick="$(echo "$copyqjs" | \
         /Applications/CopyQ.app/Contents/MacOS/CopyQ eval - | \
-        fzf --preview-window nohidden --no-info --multi --listen 6265\
+        fzf --preview-window nohidden --no-info --no-multi --listen 6265\
           	--preview-window='top:nohidden:wrap' \
             --bind 'alt-r:become(fcq)' \
             --bind 'alt-e:become(/Applications/CopyQ.app/Contents/MacOS/CopyQ read {1} | xargs -0 echo | $EDITOR)' \
