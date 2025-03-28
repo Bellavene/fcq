@@ -18,13 +18,11 @@ pick="$(echo "$copyqjs" | \
         fzf --preview-window nohidden --no-info --multi --listen 6265\
           	--preview-window='top:nohidden:wrap' \
             --bind 'alt-r:become(fcq)' \
-            --bind 'alt-e:become(/Applications/CopyQ.app/Contents/MacOS/CopyQ read {1} | xargs -0 echo | micro)' \
+            --bind 'alt-e:become(/Applications/CopyQ.app/Contents/MacOS/CopyQ read {1} | xargs -0 echo | $EDITOR)' \
             --bind 'alt-backspace:become(/Applications/CopyQ.app/Contents/MacOS/CopyQ remove {1}; fcq)' \
-            --bind 'esc:execute(yabai -m window --focus recent)' \
             --preview='/Applications/CopyQ.app/Contents/MacOS/CopyQ read {1} | \
         highlight --out-format=truecolor \
-            --syntax=zsh \
-            --style=bellavene | \
+            --syntax=zsh | \
         rga  -i \
             --field-match-separator=" " \
             --field-context-separator=" " \
@@ -37,7 +35,6 @@ pick="$(echo "$copyqjs" | \
             --context 50 {q}' | \
         awk '{print $1}'
 )"
-
 
 if [[ "$pick" != "" ]]; then
     /Applications/CopyQ.app/Contents/MacOS/CopyQ select "$pick"
