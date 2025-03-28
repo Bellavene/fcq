@@ -1,7 +1,7 @@
-# fcq
-Manage CopyQ through FZF
+## Installation
+Copy `fcq` file to your path
 
-# CopyQ integration / update on new entries
+## CopyQ integration / update on new entries
 Create a command in CopyQ and paste this:
 ```
 [Command]
